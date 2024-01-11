@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<div class="text-center py-2">
+  <h3 class="mx-3">Añadir un producto en la base de datos:</h3>
+</div>
+<div class="row d-flex justify-content-center mx-3">
+  <div class="col-4 border border-radious-3 shadow-lg p-3">
+    <form action="{% url 'nuevo' %}" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Añadir producto</button>
+      <button type="button" class="btn btn-primary mx-2"><a class="text-white" href="{% url 'listado' %}">Volver al listado</a></button>
+    </form>
+  </div>
+</div>
+{% endblock %}

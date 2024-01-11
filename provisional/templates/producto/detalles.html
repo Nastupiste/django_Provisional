@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+<div class="text-center py-2">
+  <h3 class="mx-3">Detalles del producto seleccionado:</h3>
+</div>
+<div class="row d-flex justify-content-center mx-3">
+  <div class="col-4 border border-radious-3 shadow-lg p-3">
+    <div class="text-center py-2">
+      <h3><b>{{ producto.nombre }}</b></h3>
+    </div>
+    <ul>
+      <li><b>Modelo: </b> {{ producto.modelo }}</li>
+      <li><b>Marca: </b> {{ producto.marca }}</li>
+      <li><b>Unidades: </b> {{ producto.unidades }}</li>
+      <li><b>Precio: </b> {{ producto.precio }}</li>
+      <li><b>Producto vip: </b> {{ producto.precio|yesno:"Si,No" }}</li>
+    </ul>
+    {% if producto.foto %}
+    <img src="{{ producto.foto.url }}" />
+    {% endif %}
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-primary mx-2"><a class="text-white" href="{% url 'edicion' pk=producto.pk %}">Editar</a></button>
+      <button type="button" class="btn btn-primary mx-2"><a class="text-white" href="{% url 'eliminar' pk=producto.pk %}">Eliminar</a></button>
+      <button type="button" class="btn btn-primary mx-2"><a class="text-white" href="{% url 'listado' %}">Volver</a></button>
+    </div>
+  </div>
+</div>
+{% endblock %}

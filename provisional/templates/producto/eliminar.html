@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+<div class="text-center py-2">
+  <h3 class="mx-3">Eliminar un producto de la Base de datos:</h3>
+</div>
+<div class="row d-flex p-3 mx-3 justify-content-center">
+  <div class="col-6 border-radius-3 rounded shadow-lg p-3">
+    <form method="post">
+      {% csrf_token %}
+      <div class="text-center py-2">
+        <h4>¿Seguro que quieres borrar este producto?</h4>
+      </div>
+      <div class="justify-content-center p-3">
+        <h5><b>{{ producto.nombre }}</h5>
+        <span><b>Marca: </b>{{ producto.marca }}</span><br />
+        <span><b>Modelo: </b>{{ producto.modelo }}</span>
+      </div>
+      {{ form }}
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">Confirmar Borrado</button>
+        <button type="button" class="btn btn-primary mx-2">
+          <a class="text-white" href="{% url 'detalles' pk=producto.pk %}" role="button" class="secondary">Cancelar</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

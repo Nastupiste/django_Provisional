@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
-AUTH_USER_MODEL = "provisional.User"
+AUTH_USER_MODEL = "provisional.Usuario"
 
 
 # Application definition
