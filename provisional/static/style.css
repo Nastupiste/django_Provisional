@@ -4,6 +4,7 @@ a {
 body {
   min-height: 100vh;
   background-image: url("./imagenes/fondoBody.png");
+  background-size: cover;
 }
 
 .fondoCard {

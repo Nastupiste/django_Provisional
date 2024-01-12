@@ -3,7 +3,7 @@
   <h3 class="mx-3">Añadir un producto en la base de datos:</h3>
 </div>
 <div class="row d-flex justify-content-center mx-3">
-  <div class="col-4 border border-radious-3 shadow-lg p-3">
+  <div class="col-4 border border-radious-3 rounded shadow-lg p-3 bg-white">
     <form action="{% url 'nuevo' %}" method="post">
       {% csrf_token %} {{ form.as_p }}
       <button type="submit" class="btn btn-primary">Añadir producto</button>
