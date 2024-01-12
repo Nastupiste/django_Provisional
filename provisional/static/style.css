@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+}
+body {
+  min-height: 100vh;
+  background-image: url("./imagenes/fondoBody.png");
+}
+
+.fondoCard {
+  background-image: url("./imagenes/fondoCard.jpg");
+  background-size: cover;
+}
